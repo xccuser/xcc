@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!--指定Mybatis所用日志的具体实现  -->
+    <properties resource="db.properties"/>
+    
+	<!-- 设置别名 -->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!--会带有延迟加载的对象立即加载，反之每种属性将会按需加载  -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+ 
+    
+   
+    <!--配置，即连接的数据库  -->
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+            	<property name="driver" value="${driver}"/>
+            	<property name="url" value="${url}"/>
+            	<property name="username" value="${username}"/>
+            	<property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    
+    <mappers>
+	   <mapper resource="com/xcc/mapper/RootInsertUser.xml"/>
+	    <mapper resource="com/xcc/mapper/UserInsert.xml"/>
+	    <mapper resource="com/xcc/mapper/LoginUser.xml"/>
+	    <mapper resource="com/xcc/mapper/DeleteUser.xml"/>
+	    <mapper resource="com/xcc/mapper/LoginUser.xml"/>
+	    <mapper resource="com/xcc/mapper/UserUpdate.xml"/>
+    </mappers>
+    
+</configuration>
+
+

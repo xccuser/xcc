@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xcc.mapper.LoginUser">
+    <select id="rootUserselectByPhone" resultType="com.xcc.electrombilebean.RootUser" parameterType="com.xcc.electrombilebean.RootUser">
+    	select * from tb_root_user  where phone=#{phone} 
+    </select>
+    
+   <select id="UserselectByPhone" resultType="com.xcc.electrombilebean.RootUser" parameterType="com.xcc.electrombilebean.RootUser">
+    	select * from tb_user  where phone=#{phone} | loginname=#{loginname}
+    </select>
+</mapper>
+<!-- parameterType="com.xcc.electrombilebean.User" --> 

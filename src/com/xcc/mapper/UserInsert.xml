@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xcc.mapper.UserInert">
+    <insert id="insertUser" parameterType="com.xcc.electrombilebean.User" keyProperty="true">
+   	 insert into tb_user(mac,username,loginname,phone,password,identity,email,date)
+   	 values(#{mac},#{username},#{loginname},#{phone},#{userPassword},#{identity},#{email},#{date})
+    </insert>
+    
+    
+</mapper>
