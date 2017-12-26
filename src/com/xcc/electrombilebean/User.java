@@ -4,7 +4,7 @@ public class User {
 	private Integer id;
 	private String loginname;
 	private String username;
-	private String userPassword;
+	private String userpassword;
 	private String identity;
 	private String email;
 	private String mac;
@@ -64,11 +64,11 @@ public class User {
 	public void setUserName(String username) {
 		this.username = username;
 	}
-	public String getUserPassword() {
-		return userPassword;
+	public String getUserpassword() {
+		return userpassword;
 	}
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setUserpassword(String userpassword) {
+		this.userpassword = userpassword;
 	}
 	public String getIdentity() {
 		return identity;
@@ -84,7 +84,7 @@ public class User {
 */
 	@Override
 	public String toString(){
-		return "id:"+id+",loginname:"+loginname+",userPassword:"+userPassword+
+		return "id:"+id+",loginname:"+loginname+",userpassword:"+userpassword+
 				",identity:"+identity+",email:"+email+",mac:"+mac+",phone:"+phone+",date:"+
 				date+",car_info:"+car_info;
 		

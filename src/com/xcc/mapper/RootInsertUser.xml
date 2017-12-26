@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xcc.mapper.RootInsertUser">
 <insert id="insertRootUser" parameterType="com.xcc.electrombilebean.RootUser" keyProperty="true">
-    insert into tb_root_user(mac,username,loginname,phone,password,identity,email,date)
-    values(#{mac},#{username},#{loginname},#{phone},#{userPassword},#{identity},#{email},#{date})
+    insert into tb_root_user(mac,username,loginname,phone,userpassword,identity,email,date)
+    values(#{mac},#{username},#{loginname},#{phone},#{userpassword},#{identity},#{email},#{date})
 </insert>
 </mapper>

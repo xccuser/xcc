@@ -4,4 +4,6 @@ import java.io.Serializable;
 
 public class RootUser extends User {
 	
+	
+	
 }

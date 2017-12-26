@@ -3,15 +3,15 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xcc.mapper.UserUpdate">
     <update id="update_tb_mac_location" parameterType="com.xcc.electrombilebean.User">
-       update tb_user set password=#{userPassword} where mac=#{mac}
+       update tb_user set password=#{userpassword} where mac=#{mac}
     </update>
     
     <update id="updatetbrootuser" parameterType="com.xcc.electrombilebean.RootUser">
-	      update tb_root_user set password=#{userPassword} where phone=#{phone}
+	      update tb_root_user set userpassword=#{userpassword} where phone=#{phone}
     </update>
     
-    <update id="update_tb_user" parameterType="com.xcc.electrombilebean.LocationMac">
-         update tb_user set password=#{userPassword},date=#{date}where phone=#{phone}
+    <update id="updatetbuser" parameterType="com.xcc.electrombilebean.LocationMac">
+         update tb_user set password=#{userpassword},date=#{date}where phone=#{phone}
     </update>
     
 </mapper>

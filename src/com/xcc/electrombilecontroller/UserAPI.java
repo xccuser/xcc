@@ -29,7 +29,7 @@ public class UserAPI {
 			HttpServletResponse respone) throws IOException{
 		user.setMac("02:32:15:FD");
 		user.setUserName("root");
-		user.setUserPassword("123456");
+		user.setUserpassword("123456");
 		respone.getWriter().println(JSONObject.toJSONString(user));
 	//	return "success";
 	}

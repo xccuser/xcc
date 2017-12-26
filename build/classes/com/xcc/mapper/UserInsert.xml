@@ -4,7 +4,7 @@
 <mapper namespace="com.xcc.mapper.UserInert">
     <insert id="insertUser" parameterType="com.xcc.electrombilebean.User" keyProperty="true">
    	 insert into tb_user(mac,username,loginname,phone,password,identity,email,date)
-   	 values(#{mac},#{username},#{loginname},#{phone},#{userPassword},#{identity},#{email},#{date})
+   	 values(#{mac},#{username},#{loginname},#{phone},#{userpassword},#{identity},#{email},#{date})
     </insert>
     
     

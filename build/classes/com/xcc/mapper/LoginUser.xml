@@ -6,8 +6,9 @@
     	select * from tb_root_user  where phone=#{phone} 
     </select>
     
-   <select id="UserselectByPhone" resultType="com.xcc.electrombilebean.RootUser" parameterType="com.xcc.electrombilebean.RootUser">
+   <select id="UserselectByPhone" resultType="com.xcc.electrombilebean.User" parameterType="com.xcc.electrombilebean.User">
     	select * from tb_user  where phone=#{phone} | loginname=#{loginname}
     </select>
+    
 </mapper>
 <!-- parameterType="com.xcc.electrombilebean.User" --> 

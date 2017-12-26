@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.alibaba.fastjson.JSONObject;
+import com.xcc.constant.Constant;
 import com.xcc.electrombilebean.RootUser;
 import com.xcc.electrombilebean.TempUser;
 import com.xcc.electrombilebean.User;
@@ -38,7 +39,7 @@ public class UserReaisterAPI {
 	List<User>  list=new ArrayList<User>();
 	/**
 	 *  需要"Content-Type", "application/json" 设施post
-	 * phone，password,mac,username,identity
+	 *  phone，password,mac,username,identity
 	 *  phone是唯一的
 	 */
 	@RequestMapping("/registerRoot")
@@ -72,6 +73,7 @@ public class UserReaisterAPI {
 	 *  普通用户模块设计
 	 *  超级用户通过设给临时用户设置mac给权限(手机唯一)
 	 *   phone,password,username,email注册
+	 *   
 	 */
 	@RequestMapping("/registerUser")
 	public void Register(@RequestBody User user,
@@ -85,14 +87,13 @@ public class UserReaisterAPI {
 		try{
 			session.insert("com.xcc.mapper.UserInert.insertUser",user);
 			session.commit();
-			respone.getWriter().println("sucess");
+			respone.getWriter().println(JSONObject.toJSONString(user));
 		}catch(Exception e){
-			respone.getWriter().println("fail");
+			respone.getWriter().println(JSONObject.toJSONString(Constant.ERROR));
 			e.printStackTrace();
 		}finally{
 			session.close();
 		}
-
 	}
 
 

@@ -34,7 +34,7 @@ public class UserLogin {
 	@RequestMapping("/loginRootUser")
 	public void login(@RequestBody RootUser user
 			,HttpServletResponse response) throws Exception{
-
+		System.out.println(user);
 		SqlSession session=RootUserDB.getSqlSession();
 		List<RootUser> users=null;
 		try{
@@ -43,12 +43,12 @@ public class UserLogin {
 				response.setCharacterEncoding("utf-8");
 				response.getWriter().println("查无此用户");
 			}else{
-				if(users.get(0).getUserPassword()!=user.getUserPassword()){
+				if(users.get(0).getUserpassword().equals(user.getUserpassword())){
 					response.setCharacterEncoding("utf-8");
-					response.getWriter().println("密码错误");
+					response.getWriter().println(JSONObject.toJSON(users));
 				}else{
 					response.setCharacterEncoding("utf-8");
-					response.getWriter().println(users);
+					response.getWriter().println("密码错误");
 				}
 			}
 			session.commit();
@@ -65,7 +65,6 @@ public class UserLogin {
 	/*
 	 * 
 	 * 普通用户登录
-	 * 
 	 * loginname,passwrod,identify(身份)
 	 * 返回mac具有权限，返回null或""为没有权限
 	 * 
@@ -82,12 +81,12 @@ public class UserLogin {
 				response.setCharacterEncoding("utf-8");
 				response.getWriter().println(Constant.USER_NOT);
 			}else{
-				if(users.get(0).getUserPassword()!=user.getUserPassword()){
+				if(users.get(0).getUserpassword()!=user.getUserpassword()){
 					response.setCharacterEncoding("utf-8");
 					response.getWriter().println(Constant.USER_PASSWORD);
 				}else{
 					response.setCharacterEncoding("utf-8");
-					response.getWriter().println(users);//返还用户数据
+					response.getWriter().println(JSONObject.toJSON(users));//返还用户数据
 				}
 			}
 			session.commit();
@@ -96,10 +95,6 @@ public class UserLogin {
 		}finally{
 			session.close();
 		}	
-
-
-
-
 	}
 
 

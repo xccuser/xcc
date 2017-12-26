@@ -17,7 +17,7 @@ import com.xcc.electrombilebean.User;
  */
 public class Test {
 	public static void main(String[] args){
-		testUpdate();
+		testLogin();
 	}
 
 	public static void testLogin(){
@@ -29,8 +29,6 @@ public class Test {
 			users=session.selectList("com.xcc.mapper.LoginUser.rootUserselectByPhone",user);
 			System.out.println(users);
 			session.commit();
-
-
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
@@ -41,7 +39,7 @@ public class Test {
 	public static void testRegister(){
 		User user=new User();
 		user.setLoginname("xcc");
-		user.setUserPassword("123456");
+		user.setUserpassword("123456");
 		user.setMac("10:13:13:43");
 		user.setPhone("1233231123");
 		user.setDate(new Date().toString());
@@ -59,7 +57,7 @@ public class Test {
 	public static void testDelete(){
 		User user=new User();
 		user.setLoginname("xcc");
-		user.setUserPassword("123456");
+		user.setUserpassword("123456");
 		user.setMac("12:32:12:31");
 		user.setPhone("12324234232");
 		user.setDate(new Date().toString());
@@ -78,7 +76,7 @@ public class Test {
 	public static void testUpdate(){
 		User user=new User();
 		user.setLoginname("xcc");
-		user.setUserPassword("123456");
+		user.setUserpassword("123456");
 		user.setMac("12:32:12:31");
 		user.setPhone("13812667134");
 		user.setDate(new Date().toString());
