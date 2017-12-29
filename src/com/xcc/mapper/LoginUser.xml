@@ -11,4 +11,5 @@
     </select>
     
 </mapper>
+
 <!-- parameterType="com.xcc.electrombilebean.User" --> 

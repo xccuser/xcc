@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.alibaba.fastjson.JSONObject;
-import com.xcc.com.xcc.commodity.CommodityBean;
+import com.xcc.electrombilebean.CommodityBean;
 
 /**
  *  Administrator

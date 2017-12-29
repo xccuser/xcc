@@ -87,7 +87,6 @@ public class User {
 		return "id:"+id+",loginname:"+loginname+",userpassword:"+userpassword+
 				",identity:"+identity+",email:"+email+",mac:"+mac+",phone:"+phone+",date:"+
 				date+",car_info:"+car_info;
-		
 	}
 	
 	
