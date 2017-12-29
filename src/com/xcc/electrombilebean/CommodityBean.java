@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.xcc.com.xcc.commodity;
+package com.xcc.electrombilebean;
 
 /**
  *  Administrator
@@ -21,8 +21,6 @@ public class CommodityBean {
 		this.position=position;
 		this.distance=distance;
 	}
-
-
 
 	public String getStore() {
 		return store;
